@@ -7,10 +7,7 @@ import { Mapdatum } from './entities/mapdatum.entity';
 
 @Injectable()
 export class MapdataService {
-  // create(createMapdatumDto: CreateMapdatumDto) {
-  //   return 'This action adds a new mapdatum';
-  // }
-
+ 
   constructor(
     @InjectRepository(Mapdatum)
     private readonly PostgiRepository: Repository<Mapdatum>,
