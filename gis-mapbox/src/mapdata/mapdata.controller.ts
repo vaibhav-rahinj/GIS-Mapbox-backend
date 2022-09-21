@@ -55,10 +55,10 @@ export class MapdataController {
         coordinates: [element.lat, element.lon],
       };
       const loadData = {
-        id: parsedCsv.data[0].id,
-        lat: parsedCsv.data[0].lat,
-        lon: parsedCsv.data[0].lon,
-        city: parsedCsv.data[0].city,
+        id: element.id,
+        lat: element.lat,
+        lon: element.lon,
+        city: element.city,
         location: point,
         // location:'0101000020E61000007A8D5DA27A1333403FAA61BF27385240',
       };
@@ -74,5 +74,13 @@ export class MapdataController {
       };
       return response;
     });
+  }
+  @Get()
+  findAll() {
+    return this.mapService.findAll();
+  }
+  getFile() {
+    const file = createReadStream(join(process.cwd(), './mapbox/1.csv'));
+    console.log(file);
   }
 }
